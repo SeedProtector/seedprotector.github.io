@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用教程 — Seed 芥子</title>
+  <meta name="description" content="Seed 芥子使用教程：如何使用自解压模式保护和运行你的 WebAssembly 程序。">
+  <link rel="icon" type="image/png" href="assets/icons/seed-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Guide page specific styles */
+    .guide-page {
+      padding-top: calc(var(--nav-height) + 40px);
+      padding-bottom: 80px;
+      min-height: 100vh;
+    }
+    .guide-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .guide-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .guide-header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .guide-header p {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .guide-toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 48px;
+    }
+    .guide-toc h2 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    .guide-toc ol {
+      list-style: none;
+      counter-reset: toc;
+      padding-left: 0;
+    }
+    .guide-toc ol li {
+      counter-increment: toc;
+      margin-bottom: 8px;
+    }
+    .guide-toc ol li a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      transition: color var(--transition);
+    }
+    .guide-toc ol li a::before {
+      content: counter(toc) ".";
+      color: var(--accent);
+      font-weight: 600;
+      font-family: var(--font-mono);
+      min-width: 24px;
+    }
+    .guide-toc ol li a:hover {
+      color: var(--accent);
+    }
+    .guide-section {
+      margin-bottom: 56px;
+    }
+    .guide-section h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+      scroll-margin-top: calc(var(--nav-height) + 20px);
+    }
+    .guide-section h2 .section-num {
+      color: var(--accent);
+      font-family: var(--font-mono);
+      margin-right: 8px;
+    }
+    .guide-section h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+    .guide-section p {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .guide-section strong {
+      color: var(--text-primary);
+    }
+    .guide-section ul, .guide-section ol {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .guide-section li {
+      margin-bottom: 6px;
+    }
+    .guide-code {
+      background: #0d0d1a;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: #b8b8cc;
+    }
+    .guide-code .comment { color: #5a5a7a; }
+    .guide-code .highlight { color: var(--accent); }
+    .guide-code .string { color: #f0b90b; }
+    .guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 0.9375rem;
+    }
+    .guide-table th {
+      text-align: left;
+      padding: 12px 16px;
+      background: rgba(22,199,132,0.08);
+      color: var(--accent);
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+    .guide-table td {
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .guide-table tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+    .guide-callout {
+      background: rgba(22,199,132,0.06);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .guide-callout.warning {
+      background: rgba(240,185,11,0.06);
+      border-left-color: var(--gold);
+    }
+    .guide-flow {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 2;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .guide-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 32px;
+      transition: color var(--transition);
+    }
+    .guide-back:hover { color: var(--accent); }
+    .guide-back svg { width: 16px; height: 16px; }
+    .inline-code {
+      background: rgba(22,199,132,0.1);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.85em;
+    }
+    @media (max-width: 768px) {
+      .guide-header h1 { font-size: 1.75rem; }
+      .guide-section h2 { font-size: 1.375rem; }
+      .guide-code { padding: 16px; font-size: 0.8125rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== Navigation ========== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/icons/seed-icon.png" alt="Seed Logo" class="nav-logo">
+        <span class="nav-brand-text">Seed <span class="brand-cn">芥子</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#features" data-i18n="nav.features">核心优势</a>
+        <a href="index.html#languages" data-i18n="nav.languages">语言支持</a>
+        <a href="guide.html" class="active" data-i18n="nav.guide">使用教程</a>
+        <a href="faq.html" data-i18n="nav.faq">常见问题</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" title="Switch Language">
+          <span class="lang-icon">🌐</span>
+          <span class="lang-label" id="langLabel">EN</span>
+        </button>
+        <a href="contact.html" class="btn btn-primary btn-sm" data-i18n="nav.getStarted">立即体验</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== Guide Content ========== -->
+  <main class="guide-page">
+    <div class="guide-container">
+
+      <a href="index.html" class="guide-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span id="backText"></span>
+      </a>
+
+      <div class="guide-header">
+        <h1 id="guideTitle"></h1>
+        <p id="guideSubtitle"></p>
+      </div>
+
+      <!-- Table of Contents (rendered by JS) -->
+      <div class="guide-toc">
+        <h2 id="tocTitle"></h2>
+        <ol id="tocList">
+          <!-- Populated by JS -->
+        </ol>
+      </div>
+
+      <!-- Guide sections (rendered by JS) -->
+      <div id="guideSections">
+        <!-- Populated by JS -->
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <p style="color: var(--text-muted); font-size: 0.9375rem;" id="guideFooterText"></p>
+        <div style="display: flex; gap: 16px; justify-content: center; margin-top: 16px;">
+          <a href="faq.html" class="btn btn-ghost btn-md" data-i18n="nav.faq">常见问题</a>
+          <a href="contact.html" class="btn btn-primary btn-md" data-i18n="nav.getStarted">立即体验</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/icons/seed-icon.png" alt="Seed" class="footer-logo">
+          <span class="footer-brand-name">Seed 芥子</span>
+        </div>
+        <p class="footer-tagline" data-i18n="footer.tagline">让每一行代码都安全无忧。</p>
+        <p class="footer-copyright" data-i18n="footer.copyright">© 2026 Seed 芥子. 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script>
+  (async function() {
+    'use strict';
+
+    // ---- Render functions (defined before init) ----
+
+    function renderGuideContent(data) {
+      const guide = data && data.guide;
+      if (!guide) return;
+
+      // Page title
+      document.title = guide.pageTitle || '';
+
+      // Header
+      const backText = document.getElementById('backText');
+      const guideTitle = document.getElementById('guideTitle');
+      const guideSubtitle = document.getElementById('guideSubtitle');
+      const tocTitle = document.getElementById('tocTitle');
+      const guideFooterText = document.getElementById('guideFooterText');
+
+      if (backText) backText.textContent = guide.backText || '';
+      if (guideTitle) guideTitle.textContent = guide.title || '';
+      if (guideSubtitle) guideSubtitle.textContent = guide.subtitle || '';
+      if (tocTitle) tocTitle.textContent = guide.tocTitle || '';
+      if (guideFooterText) guideFooterText.textContent = guide.footerText || '';
+
+      // Table of Contents
+      const tocList = document.getElementById('tocList');
+      if (tocList && guide.toc && guide.sections) {
+        tocList.innerHTML = guide.sections.map((sec, i) =>
+          `<li><a href="#${sec.id}">${guide.toc[i] || sec.title}</a></li>`
+        ).join('');
+      }
+
+      // Sections
+      const container = document.getElementById('guideSections');
+      if (!container || !guide.sections) return;
+      container.innerHTML = guide.sections.map(sec => {
+        const blocksHtml = (sec.blocks || []).map(renderBlock).join('');
+        return `
+          <section class="guide-section" id="${sec.id}">
+            <h2><span class="section-num">${sec.num}.</span> ${sec.title}</h2>
+            ${blocksHtml}
+          </section>
+        `;
+      }).join('');
+    }
+
+    function renderBlock(block) {
+      switch (block.type) {
+        case 'p':
+          return `<p>${block.text}</p>`;
+        case 'h3':
+          return `<h3>${block.text}</h3>`;
+        case 'code':
+          return `<div class="guide-code">${block.text}</div>`;
+        case 'flow':
+          return `<div class="guide-flow">${block.text}</div>`;
+        case 'callout':
+          return `<div class="guide-callout">${block.text}</div>`;
+        case 'callout-warning':
+          return `<div class="guide-callout warning">${block.text}</div>`;
+        case 'ul':
+          return `<ul>${(block.items || []).map(item => `<li>${item}</li>`).join('')}</ul>`;
+        case 'ol':
+          return `<ol>${(block.items || []).map(item => `<li>${item}</li>`).join('')}</ol>`;
+        case 'table': {
+          const headers = (block.headers || []).map(h => `<th>${h}</th>`).join('');
+          const rows = (block.rows || []).map(row =>
+            `<tr>${row.map(cell => `<td>${cell}</td>`).join('')}</tr>`
+          ).join('');
+          return `<table class="guide-table"><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table>`;
+        }
+        default:
+          return '';
+      }
+    }
+
+    function updateLangButton(lang) {
+      const label = document.getElementById('langLabel');
+      if (label) label.textContent = lang === 'zh' ? 'EN' : '中文';
+    }
+
+    // ---- Initialize ----
+    const lang = await I18n.init();
+    updateLangButton(lang);
+    renderGuideContent(I18n.getData());
+
+    I18n.onChange((newLang, data) => {
+      updateLangButton(newLang);
+      renderGuideContent(data);
+    });
+
+    // Language toggle
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+      langToggle.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        try {
+          await I18n.toggle();
+        } catch (err) {
+          console.error('[guide] Language toggle failed:', err);
+        }
+      });
+    }
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        mobileMenuBtn.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-open');
+          mobileMenuBtn.classList.remove('active');
+        });
+      });
+    }
+
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#') && href.length > 1) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+  })();
+  </script>
+
+</body>
+</html>

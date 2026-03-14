@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seed 芥子 — WebAssembly 字节码保护工具</title>
+  <meta name="description" content="Seed 芥子是一款 WebAssembly 字节码保护工具，帮助开发者将编译后的程序进行深度加固，防止逆向工程、代码窃取和未授权使用。">
+  <meta name="keywords" content="WebAssembly, wasm, bytecode protection, code obfuscation, reverse engineering, code security, Seed, 芥子">
+  <meta property="og:title" content="Seed 芥子 — WebAssembly 字节码保护工具">
+  <meta property="og:description" content="深度加固你的 WebAssembly 程序，防止逆向工程与代码窃取。">
+  <meta property="og:image" content="assets/icons/seed-icon.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/icons/seed-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ========== Navigation ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">
+        <img src="assets/icons/seed-icon.png" alt="Seed Logo" class="nav-logo">
+        <span class="nav-brand-text">Seed <span class="brand-cn">芥子</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#features" data-i18n="nav.features">核心优势</a>
+        <a href="#languages" data-i18n="nav.languages">语言支持</a>
+        <a href="guide.html" data-i18n="nav.guide">使用教程</a>
+        <a href="faq.html" data-i18n="nav.faq">常见问题</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" title="Switch Language">
+          <span class="lang-icon">🌐</span>
+          <span class="lang-label" id="langLabel">EN</span>
+        </button>
+        <a href="contact.html" class="btn btn-primary btn-sm" data-i18n="nav.getStarted">立即体验</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== Hero Section ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span data-i18n="hero.badge">WebAssembly 字节码保护</span>
+        </div>
+        <h1 class="hero-title" data-i18n="hero.slogan">芥子纳须弥，代码藏乾坤。</h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">WebAssembly 字节码保护工具，帮助开发者将编译后的程序进行深度加固，防止逆向工程、代码窃取和未授权使用。</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">
+            <span data-i18n="hero.cta">立即开始</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#features" class="btn btn-ghost btn-lg">
+            <span data-i18n="hero.ctaSecondary">了解更多</span>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-value">14</span>
+            <span class="stat-label" data-i18n="stats.items.3.label">支持语言数</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-value">&lt; 0.1%</span>
+            <span class="stat-label" data-i18n="stats.items.0.label">文件体积增长</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-value">&lt; 1%</span>
+            <span class="stat-label" data-i18n="stats.items.1.label">运行时额外开销</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-value">10</span>
+            <span class="stat-label" data-i18n="hero.securityFeatures">安全增强能力</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Problem Section ========== -->
+  <section class="section section-problem" id="problem">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="problem.title">为什么需要 Seed？</h2>
+        <p class="section-subtitle" data-i18n="problem.subtitle">标准 .wasm 文件几乎是"明文"状态 —— 任何人都可以用反编译工具轻松还原你的代码逻辑。</p>
+      </div>
+      <div class="problem-grid" id="problemGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Features / Protection ========== -->
+  <section class="section section-features" id="features">
+    <div class="container">
+      <!-- Protection Levels -->
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="protection.title">三级渐进式保护</h2>
+        <p class="section-subtitle" data-i18n="protection.subtitle">根据安全需求和性能要求灵活选择保护级别</p>
+      </div>
+      <div class="levels-grid" id="levelsGrid">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- 10 Security Features -->
+      <div class="section-header" style="margin-top: 6rem;">
+        <h2 class="section-title" data-i18n="security.title">十重安全增强</h2>
+        <p class="section-subtitle" data-i18n="security.subtitle">覆盖从数据到代码、从静态分析到动态调试的全方位防护</p>
+      </div>
+      <div class="security-grid" id="securityGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Stats Section ========== -->
+  <section class="section section-stats" id="stats">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="stats.title">近零性能损耗</h2>
+      </div>
+      <div class="stats-grid" id="statsGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Languages Section ========== -->
+  <section class="section section-languages" id="languages">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="languages.title">14 种编程语言支持</h2>
+        <p class="section-subtitle" data-i18n="languages.subtitle">无论你的项目使用什么语言，Seed 都能保护</p>
+      </div>
+      <div class="languages-container">
+        <div class="lang-tier">
+          <h3 class="tier-label" data-i18n="languages.tier1Label">第一梯队 — 原生支持</h3>
+          <div class="lang-badges" id="tier1Badges">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+        <div class="lang-tier">
+          <h3 class="tier-label" data-i18n="languages.tier2Label">第二梯队 — 工具链支持</h3>
+          <div class="lang-badges" id="tier2Badges">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Workflow Section ========== -->
+  <section class="section section-workflow" id="workflow">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="workflow.title">四步完成加固</h2>
+        <p class="section-subtitle" data-i18n="workflow.subtitle">只需四步，你的代码就从"裸奔"变为"全副武装"</p>
+      </div>
+      <div class="workflow-steps" id="workflowSteps">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Use Cases Section ========== -->
+  <section class="section section-usecases" id="usecases">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="useCases.title">谁在使用 Seed？</h2>
+      </div>
+      <div class="usecases-grid" id="usecasesGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Distribution Section ========== -->
+  <section class="section section-distribution" id="distribution">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="distribution.title">灵活的分发方式</h2>
+      </div>
+      <div class="distribution-grid" id="distributionGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA Section ========== -->
+  <section class="section section-cta" id="get-started">
+    <div class="container">
+      <div class="cta-card">
+        <h2 class="cta-title" data-i18n="hero.slogan">芥子纳须弥，代码藏乾坤。</h2>
+        <p class="cta-subtitle" data-i18n="hero.subtitle">WebAssembly 字节码保护工具，帮助开发者将编译后的程序进行深度加固，防止逆向工程、代码窃取和未授权使用。</p>
+        <a href="contact.html" class="btn btn-primary btn-lg">
+          <span data-i18n="nav.getStarted">立即体验</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/icons/seed-icon.png" alt="Seed" class="footer-logo">
+          <span class="footer-brand-name">Seed 芥子</span>
+        </div>
+        <p class="footer-tagline" data-i18n="footer.tagline">让每一行代码都安全无忧。</p>
+        <p class="footer-copyright" data-i18n="footer.copyright">© 2026 Seed 芥子. 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

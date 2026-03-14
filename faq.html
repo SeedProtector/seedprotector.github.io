@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常见问题 — Seed 芥子</title>
+  <meta name="description" content="Seed 芥子 WebAssembly 字节码保护工具常见问题与解答。">
+  <link rel="icon" type="image/png" href="assets/icons/seed-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    .faq-page {
+      padding-top: calc(var(--nav-height) + 40px);
+      padding-bottom: 80px;
+      min-height: 100vh;
+    }
+    .faq-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .faq-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 32px;
+      transition: color var(--transition);
+    }
+    .faq-back:hover { color: var(--accent); }
+    .faq-back svg { width: 16px; height: 16px; }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .faq-header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .faq-header p {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .faq-category {
+      margin-bottom: 48px;
+    }
+    .faq-category-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+    .faq-category-title .cat-icon {
+      font-size: 1.5rem;
+    }
+    .faq-page-footer {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .faq-page-footer p {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .faq-page-footer .footer-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+    @media (max-width: 768px) {
+      .faq-header h1 { font-size: 1.75rem; }
+      .faq-category-title { font-size: 1.125rem; }
+      .faq-page-footer .footer-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== Navigation ========== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/icons/seed-icon.png" alt="Seed Logo" class="nav-logo">
+        <span class="nav-brand-text">Seed <span class="brand-cn">芥子</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#features" data-i18n="nav.features">核心优势</a>
+        <a href="index.html#languages" data-i18n="nav.languages">语言支持</a>
+        <a href="guide.html" data-i18n="nav.guide">使用教程</a>
+        <a href="faq.html" class="active" data-i18n="nav.faq">常见问题</a>
+      </div>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" title="Switch Language">
+          <span class="lang-icon">🌐</span>
+          <span class="lang-label" id="langLabel">EN</span>
+        </button>
+        <a href="contact.html" class="btn btn-primary btn-sm" data-i18n="nav.getStarted">立即体验</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== FAQ Content ========== -->
+  <main class="faq-page">
+    <div class="faq-container">
+
+      <a href="index.html" class="faq-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span id="backText"></span>
+      </a>
+
+      <div class="faq-header">
+        <h1 id="faqTitle"></h1>
+        <p id="faqSubtitle"></p>
+      </div>
+
+      <!-- FAQ categories (rendered by JS) -->
+      <div id="faqCategories">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Footer CTA -->
+      <div class="faq-page-footer">
+        <p id="faqFooterText"></p>
+        <div class="footer-actions">
+          <a href="guide.html" class="btn btn-ghost btn-md" data-i18n="nav.guide">使用教程</a>
+          <a href="contact.html" class="btn btn-primary btn-md" data-i18n="nav.getStarted">立即体验</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/icons/seed-icon.png" alt="Seed" class="footer-logo">
+          <span class="footer-brand-name">Seed 芥子</span>
+        </div>
+        <p class="footer-tagline" data-i18n="footer.tagline">让每一行代码都安全无忧。</p>
+        <p class="footer-copyright" data-i18n="footer.copyright">© 2026 Seed 芥子. 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script>
+  (async function() {
+    'use strict';
+
+    // ---- Render functions (defined before init) ----
+
+    function renderFaqContent(data) {
+      const faqPage = data && data.faqPage;
+      if (!faqPage) return;
+
+      // Page title
+      document.title = faqPage.pageTitle || '';
+
+      // Header
+      const backText = document.getElementById('backText');
+      const faqTitle = document.getElementById('faqTitle');
+      const faqSubtitle = document.getElementById('faqSubtitle');
+      const faqFooterText = document.getElementById('faqFooterText');
+
+      if (backText) backText.textContent = faqPage.backText || '';
+      if (faqTitle) faqTitle.textContent = faqPage.title || '';
+      if (faqSubtitle) faqSubtitle.textContent = faqPage.subtitle || '';
+      if (faqFooterText) faqFooterText.textContent = faqPage.footerText || '';
+
+      // Categories
+      const container = document.getElementById('faqCategories');
+      if (!container || !faqPage.categories) return;
+      container.innerHTML = faqPage.categories.map(cat => {
+        const itemsHtml = (cat.items || []).map(item => `
+          <div class="faq-item" style="margin-bottom: 12px;">
+            <div class="faq-question" onclick="this.closest('.faq-item').classList.toggle('active')">
+              <h3>${item.q}</h3>
+              <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">${item.a}</div>
+            </div>
+          </div>
+        `).join('');
+        return `
+          <div class="faq-category">
+            <h2 class="faq-category-title">
+              <span class="cat-icon">${cat.icon}</span>
+              <span>${cat.title}</span>
+            </h2>
+            <div class="faq-list">${itemsHtml}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function updateLangButton(lang) {
+      const label = document.getElementById('langLabel');
+      if (label) label.textContent = lang === 'zh' ? 'EN' : '中文';
+    }
+
+    // ---- Initialize ----
+    const lang = await I18n.init();
+    updateLangButton(lang);
+    renderFaqContent(I18n.getData());
+
+    I18n.onChange((newLang, data) => {
+      updateLangButton(newLang);
+      renderFaqContent(data);
+    });
+
+    // Language toggle
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+      langToggle.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        try {
+          await I18n.toggle();
+        } catch (err) {
+          console.error('[faq] Language toggle failed:', err);
+        }
+      });
+    }
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-open');
+        mobileMenuBtn.classList.toggle('active');
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-open');
+          mobileMenuBtn.classList.remove('active');
+        });
+      });
+    }
+
+  })();
+  </script>
+
+</body>
+</html>

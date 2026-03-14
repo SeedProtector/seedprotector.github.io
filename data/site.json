@@ -1,0 +1,44 @@
+{
+  "brand": {
+    "name": "Seed",
+    "nameCN": "芥子",
+    "fullName": "Seed 芥子",
+    "version": "1.0",
+    "logo": "assets/icons/icon-shield-seed.png"
+  },
+  "seo": {
+    "titleZH": "Seed 芥子 — WebAssembly 字节码保护工具",
+    "titleEN": "Seed — WebAssembly Bytecode Protection Tool",
+    "descriptionZH": "Seed 芥子是一款 WebAssembly 字节码保护工具，帮助开发者将编译后的程序进行深度加固，防止逆向工程、代码窃取和未授权使用。",
+    "descriptionEN": "Seed is a WebAssembly bytecode protection tool that deeply hardens compiled programs against reverse engineering, code theft, and unauthorized use.",
+    "keywords": "WebAssembly, wasm, bytecode protection, code obfuscation, reverse engineering, code security, Seed, 芥子, 字节码保护, 代码混淆"
+  },
+  "colors": {
+    "primary": "#1a1a2e",
+    "accent": "#16c784",
+    "gold": "#f0b90b",
+    "bgDark": "#0a0a14",
+    "bgCard": "#12121e",
+    "textPrimary": "#e8e8f0",
+    "textSecondary": "#8a8a9a"
+  },
+  "links": {
+    "github": "",
+    "docs": "",
+    "email": "",
+    "twitter": ""
+  },
+  "emailjs": {
+    "publicKey": "YOUR_EMAILJS_PUBLIC_KEY",
+    "serviceId": "YOUR_EMAILJS_SERVICE_ID",
+    "templateId": "YOUR_EMAILJS_TEMPLATE_ID"
+  },
+  "stats": {
+    "languages": 14,
+    "sizeOverhead": "< 0.1%",
+    "runtimeOverhead": "< 1%",
+    "protectionLevels": 3,
+    "securityFeatures": 10,
+    "testedRange": "125B ~ 48MB"
+  }
+}

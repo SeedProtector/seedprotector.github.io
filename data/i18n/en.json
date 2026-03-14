@@ -1,0 +1,366 @@
+{
+  "nav": {
+    "features": "Features",
+    "languages": "Languages",
+    "pricing": "Plans",
+    "guide": "Guide",
+    "faq": "FAQ",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "badge": "WebAssembly Bytecode Protection",
+    "slogan": "Hide your logic. Ship with confidence.",
+    "subtitle": "A WebAssembly bytecode protection tool that deeply hardens compiled programs against reverse engineering, code theft, and unauthorized use.",
+    "cta": "Get Started",
+    "ctaSecondary": "Learn More",
+    "securityFeatures": "Security Features"
+  },
+  "problem": {
+    "title": "Why Seed?",
+    "subtitle": "Standard .wasm files are essentially \"plaintext\" — anyone can easily reverse-engineer your code logic with decompilation tools.",
+    "items": [
+      { "pain": "Algorithm reverse-engineered", "solution": "Multi-layer hardening makes decompilation results incomprehensible" },
+      { "pain": "Code stolen by competitors", "solution": "Deep obfuscation renders code structure unrecognizable" },
+      { "pain": "Unlimited unauthorized usage", "solution": "Built-in expiry and usage count controls" },
+      { "pain": "Binary files tampered", "solution": "Digital signature + integrity check, tamper = invalid" },
+      { "pain": "Loss of control after distribution", "solution": "Commercial licensing system for precise control of every copy" }
+    ]
+  },
+  "protection": {
+    "title": "3-Level Progressive Protection",
+    "subtitle": "Flexibly choose protection levels based on security needs and performance requirements",
+    "recommended": "Recommended",
+    "perfImpact": "Perf. Impact",
+    "levels": [
+      { "name": "L1", "label": "Basic", "stars": 2, "perf": "Minimal", "desc": "General protection, fast deployment" },
+      { "name": "L2", "label": "Recommended", "stars": 3, "perf": "Minimal", "desc": "Balance of security and performance, fits most scenarios", "recommended": true },
+      { "name": "L3", "label": "Maximum", "stars": 4, "perf": "Low", "desc": "High-security needs, core algorithm protection" }
+    ]
+  },
+  "security": {
+    "title": "10 Security Enhancements",
+    "subtitle": "Comprehensive protection from data to code, from static analysis to dynamic debugging",
+    "features": [
+      { "icon": "🔐", "name": "Data Protection", "desc": "Auto-obfuscate constants, keys, URLs and sensitive data" },
+      { "icon": "👁️‍🗨️", "name": "Name Hiding", "desc": "Function and interface names completely invisible" },
+      { "icon": "🌀", "name": "Code Obfuscation", "desc": "Control flow disruption + code bloating + instruction morphing" },
+      { "icon": "✍️", "name": "Digital Signature", "desc": "File integrity verification, tamper detection" },
+      { "icon": "🔑", "name": "Key Security", "desc": "Multi-level key derivation, eliminate key correlation" },
+      { "icon": "🛡️", "name": "Anti-Debugging", "desc": "Dynamic debugging detection and countermeasures" },
+      { "icon": "⏱️", "name": "Usage Limits", "desc": "Expiry + run count dual control" },
+      { "icon": "🚫", "name": "Anti-Tamper", "desc": "Limit info integrity protection, modification = invalid" },
+      { "icon": "📜", "name": "Commercial License", "desc": "Built-in licensing for precise distribution control" },
+      { "icon": "📦", "name": "Self-Extract", "desc": "Single-file distribution, ready out of the box" }
+    ]
+  },
+  "languages": {
+    "title": "14 Programming Languages",
+    "subtitle": "Whatever language your project uses, Seed can protect it",
+    "tier1Label": "Tier 1 — Native Support",
+    "tier2Label": "Tier 2 — Toolchain Support",
+    "tier1": ["Rust", "C/C++", "Go", "Zig", "AssemblyScript"],
+    "tier2": ["Java", "Kotlin", "Scala", "C#", "JavaScript", "Python", "Dart", "Ruby", "Objective-C"]
+  },
+  "stats": {
+    "title": "Near-Zero Performance Overhead",
+    "items": [
+      { "value": "< 0.1%", "label": "File Size Increase" },
+      { "value": "< 1%", "label": "Runtime Overhead" },
+      { "value": "≈ 0%", "label": "Cached Run Overhead" },
+      { "value": "14", "label": "Languages Supported" }
+    ]
+  },
+  "workflow": {
+    "title": "Four Steps to Fortify",
+    "subtitle": "In just four steps, your code goes from exposed to fully armored",
+    "steps": [
+      { "num": "01", "title": "Write Code", "desc": "Develop your business logic and core algorithms" },
+      { "num": "02", "title": "Compile to Wasm", "desc": "Use your language's toolchain to compile to .wasm" },
+      { "num": "03", "title": "Seed Harden", "desc": "One command for deep protection" },
+      { "num": "04", "title": "Ship Securely", "desc": "Deliver in hardened form to your users" }
+    ]
+  },
+  "useCases": {
+    "title": "Who Uses Seed?",
+    "items": [
+      { "icon": "🏢", "name": "Software Vendors", "desc": "Protect IP of core algorithms and business logic" },
+      { "icon": "🎮", "name": "Game Developers", "desc": "Prevent cheats and decompilation, protect game logic" },
+      { "icon": "🔐", "name": "Security Firms", "desc": "Harden security-sensitive modules against analysis" },
+      { "icon": "📊", "name": "Data Processing", "desc": "Protect data processing algorithms and analytics models" },
+      { "icon": "🤖", "name": "AI / ML", "desc": "Protect inference models and feature engineering code" },
+      { "icon": "💰", "name": "FinTech", "desc": "Protect trading algorithms and risk models" }
+    ]
+  },
+  "distribution": {
+    "title": "Flexible Distribution",
+    "modes": [
+      { "name": "Standard", "product": "Encoder + Runtime", "scenario": "Internal use, trusted environments" },
+      { "name": "Self-Hardened", "product": "Protected encoder + Runtime", "scenario": "External distribution, prevent tool analysis" },
+      { "name": "Single File", "product": "Single executable", "scenario": "End-user delivery, ready to use", "recommended": true }
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      { "q": "Does Seed affect program functionality?", "a": "No. Seed's protection is transparent — the hardened program functions identically to the original." },
+      { "q": "Will hardened programs run slower?", "a": "Barely. The recommended L2 plan adds less than 1% runtime overhead, with near-zero overhead on cached runs." },
+      { "q": "Which operating systems are supported?", "a": "Seed currently supports macOS and Linux. Windows support is coming soon." },
+      { "q": "Can it protect programs of any size?", "a": "Yes. Seed has been tested on WebAssembly programs ranging from 125 bytes to 48 MB, all performing stably." },
+      { "q": "Will protected files become much larger?", "a": "No. File size growth is under 0.1%, adding only minimal metadata overhead." }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 Seed. All rights reserved.",
+    "tagline": "Keep every line of code safe and sound."
+  },
+
+  "guide": {
+    "pageTitle": "User Guide — Seed",
+    "backText": "Back to Home",
+    "title": "User Guide",
+    "subtitle": "Learn how to use Seed (self-extracting edition) to protect and run your WebAssembly programs.",
+    "tocTitle": "Contents",
+    "toc": ["Overview", "Preparation", "Harden Your Program", "Run Protected Program", "Distribute to Users", "Advanced Usage"],
+    "footerText": "💡 For more questions, please contact the Seed support team.",
+    "sections": [
+      {
+        "id": "overview",
+        "num": "1",
+        "title": "Overview",
+        "blocks": [
+          { "type": "p", "text": "The <span class=\"inline-code\">wasm-packer</span> you received is a <strong>self-extracting executable</strong> (single file). It contains the protected hardening engine and runtime — no dependencies needed, ready to use out of the box." },
+          { "type": "p", "text": "<strong>The core workflow is just two steps:</strong>" },
+          { "type": "flow", "text": "┌──────────────┐   Harden    ┌──────────────┐  Distribute  ┌──────────────┐\n│  hello.wasm  │ ─────────→ │    hello     │ ─────────→ │  ./hello     │\n│ (your program)│ wasm-packer │(SFX binary)  │  single file │ user runs it │\n└──────────────┘             └──────────────┘             └──────────────┘" },
+          { "type": "p", "text": "<strong>Key features:</strong>" },
+          { "type": "ul", "items": [
+            "You receive a <strong>single executable</strong> <span class=\"inline-code\">wasm-packer</span>",
+            "The hardened output is also a <strong>single executable</strong>",
+            "End users need no runtime, no hardening knowledge — just <strong>run it directly</strong>"
+          ]}
+        ]
+      },
+      {
+        "id": "preparation",
+        "num": "2",
+        "title": "Preparation",
+        "blocks": [
+          { "type": "h3", "text": "2.1 Get wasm-packer" },
+          { "type": "p", "text": "Get the <span class=\"inline-code\">wasm-packer</span> executable from the distribution package:" },
+          { "type": "code", "text": "<span class=\"comment\"># Extract the distribution package</span>\ntar xzf seed-&lt;platform&gt;-&lt;version&gt;.tar.gz\n\n<span class=\"comment\"># Verify wasm-packer is executable</span>\n./wasm-packer" },
+          { "type": "p", "text": "You will see the help message:" },
+          { "type": "code", "text": "wasm-packer (self-extracting) — WebAssembly bytecode protection tool\n\nThis is a self-extracting executable containing the protected encoder and runtime.\nAfter hardening a wasm file, the output is also a self-extracting executable binary.\n\nEncoder mode (default) — harden wasm, produce SFX binary:\n  ./wasm-packer --input &lt;wasm_file&gt; --output &lt;sfx_binary&gt; --level &lt;L1|L2|L3&gt; --seed &lt;n&gt;" },
+          { "type": "h3", "text": "2.2 Prepare Your WebAssembly File" },
+          { "type": "p", "text": "Before using Seed, you need to compile your project into a standard <span class=\"inline-code\">.wasm</span> file. Seed supports <strong>14 programming languages</strong>." },
+          { "type": "table", "headers": ["Language", "Language"], "rows": [
+            ["Rust", "Java"],
+            ["C/C++", "Kotlin"],
+            ["Go", "Scala"],
+            ["Zig", "C#"],
+            ["AssemblyScript", "JavaScript"],
+            ["Python", "Dart"],
+            ["Ruby", "Objective-C"]
+          ]},
+          { "type": "p", "text": "After compilation, you will have a <span class=\"inline-code\">.wasm</span> file — this is the input for Seed hardening." }
+        ]
+      },
+      {
+        "id": "harden",
+        "num": "3",
+        "title": "Harden Your Program",
+        "blocks": [
+          { "type": "h3", "text": "3.1 Basic Hardening" },
+          { "type": "p", "text": "The simplest hardening requires just one command:" },
+          { "type": "code", "text": "./wasm-packer --input your-program.wasm --output your-program --level L2 --seed <span class=\"string\">&lt;key_number&gt;</span>" },
+          { "type": "table", "headers": ["Parameter", "Description", "Example"], "rows": [
+            ["<span class=\"inline-code\">--input</span>", "Input .wasm file", "hello.wasm"],
+            ["<span class=\"inline-code\">--output</span>", "Output SFX executable name (no extension needed)", "hello"],
+            ["<span class=\"inline-code\">--level</span>", "Protection level (L1 / L2 / L3)", "L2 (recommended)"],
+            ["<span class=\"inline-code\">--seed</span>", "Encryption key (a number)", "42"]
+          ]},
+          { "type": "callout", "text": "💡 <strong>The seed</strong> is embedded in the output. End users don't need to provide it. Keep it safe for future re-hardening." },
+          { "type": "p", "text": "<strong>Full example:</strong>" },
+          { "type": "code", "text": "<span class=\"comment\"># Harden hello.wasm, produce SFX binary hello</span>\n./wasm-packer --input hello.wasm --output hello --level L2 --seed 42" },
+          { "type": "p", "text": "Output:" },
+          { "type": "code", "text": "<span class=\"highlight\">✅ Self-extracting binary: hello (33802240 bytes)</span>\n   stub: 307200 bytes, runtime: 33489920 bytes, wpk: 5072 bytes" },
+          { "type": "p", "text": "The produced <span class=\"inline-code\">hello</span> is a directly runnable self-extracting executable." },
+          { "type": "h3", "text": "3.2 Choose Protection Level" },
+          { "type": "table", "headers": ["Level", "Security", "Perf. Impact", "Recommended For"], "rows": [
+            ["L1", "Basic", "Minimal", "Quick protection, general scenarios"],
+            ["<strong>L2</strong>", "<strong>High</strong>", "<strong>Minimal</strong>", "<strong>Recommended for most scenarios</strong>"],
+            ["L3", "Very High", "Low", "Core algorithms, highest security needs"]
+          ]},
+          { "type": "h3", "text": "3.3 Full Protection (Recommended)" },
+          { "type": "p", "text": "Enable all security enhancement options for the most comprehensive protection:" },
+          { "type": "code", "text": "./wasm-packer --input your-program.wasm --output your-program --level L2 --seed <span class=\"string\">&lt;key_number&gt;</span> \\\n  --obfuscate-data \\\n  --obfuscate-names \\\n  --obfuscate-code \\\n  --sign \\\n  --hkdf" },
+          { "type": "table", "headers": ["Option", "Protection"], "rows": [
+            ["<span class=\"inline-code\">--obfuscate-data</span>", "Protect constants (strings, keys, URLs, etc.)"],
+            ["<span class=\"inline-code\">--obfuscate-names</span>", "Hide function and interface names"],
+            ["<span class=\"inline-code\">--obfuscate-code</span>", "Deep code obfuscation (control flow + bloating + morphing)"],
+            ["<span class=\"inline-code\">--sign</span>", "Add digital signature to prevent tampering"],
+            ["<span class=\"inline-code\">--hkdf</span>", "Enhance key security"]
+          ]},
+          { "type": "h3", "text": "3.4 Set Usage Limits (Optional)" },
+          { "type": "p", "text": "You can set expiry and usage count limits for the hardened program:" },
+          { "type": "code", "text": "./wasm-packer --input your-program.wasm --output your-program --level L2 --seed <span class=\"string\">&lt;key_number&gt;</span> \\\n  --obfuscate-data --obfuscate-names --obfuscate-code --sign --hkdf \\\n  --expires <span class=\"string\">\"2027-01-01T00:00:00Z\"</span> \\\n  --max-runs <span class=\"string\">1000</span>" },
+          { "type": "table", "headers": ["Option", "Description", "Example"], "rows": [
+            ["<span class=\"inline-code\">--expires</span>", "Set expiration time (ISO 8601 format)", "\"2027-01-01T00:00:00Z\""],
+            ["<span class=\"inline-code\">--max-runs</span>", "Set maximum run count", "1000"]
+          ]},
+          { "type": "callout-warning", "text": "📌 Usage limit information is integrity-protected and cannot be tampered with or bypassed." }
+        ]
+      },
+      {
+        "id": "run",
+        "num": "4",
+        "title": "Run Protected Program",
+        "blocks": [
+          { "type": "p", "text": "The hardened output is a <strong>self-extracting executable</strong> that automatically extracts the runtime and protected program from itself, then executes. Users don't need to know any hardening details." },
+          { "type": "h3", "text": "4.1 Standalone Mode (WASI CLI)" },
+          { "type": "p", "text": "For: CLI tools, server programs, and other programs with a complete main() entry point." },
+          { "type": "code", "text": "<span class=\"comment\"># Run directly, just like a regular program</span>\n./hello [program arguments...]\n\n<span class=\"comment\"># Example</span>\n./calc add 3 4\n<span class=\"highlight\"># Output: 7</span>\n\n./file-tool --input data.txt --output result.txt" },
+          { "type": "callout", "text": "💡 <strong>This is all the end user sees</strong> — a regular executable, just run it." },
+          { "type": "h3", "text": "4.2 Function Call Mode" },
+          { "type": "p", "text": "For: algorithm libraries, computation modules that need to call specific exported functions." },
+          { "type": "code", "text": "<span class=\"comment\"># Call an exported function</span>\n./hello --func &lt;function_name&gt; --args <span class=\"string\">\"&lt;argument_list&gt;\"</span>\n\n<span class=\"comment\"># Example: call the add function with arguments 3 and 4</span>\n./math --func add --args <span class=\"string\">\"3,4\"</span>\n<span class=\"highlight\"># Output: 7</span>\n\n<span class=\"comment\"># Call the fibonacci function</span>\n./math --func fibonacci --args <span class=\"string\">\"10\"</span>\n<span class=\"highlight\"># Output: 55</span>" },
+          { "type": "h3", "text": "4.3 Explicit WASI Mode" },
+          { "type": "p", "text": "If you need to explicitly specify WASI CLI mode:" },
+          { "type": "code", "text": "./hello --run-wasi -- [program arguments...]" }
+        ]
+      },
+      {
+        "id": "distribute",
+        "num": "5",
+        "title": "Distribute to Users",
+        "blocks": [
+          { "type": "p", "text": "This is the biggest advantage of self-extracting mode — <strong>distribution is extremely simple</strong>." },
+          { "type": "h3", "text": "5.1 What to Distribute" },
+          { "type": "p", "text": "You only need to deliver <strong>one file</strong>:" },
+          { "type": "code", "text": "delivery/\n└── your-app         <span class=\"comment\"># Single executable, user runs directly</span>" },
+          { "type": "p", "text": "No runtime needed, no .wpk file needed, no installation instructions needed." },
+          { "type": "h3", "text": "5.2 How Users Use It" },
+          { "type": "p", "text": "After receiving the file:" },
+          { "type": "code", "text": "<span class=\"comment\"># Grant execute permission (if needed)</span>\nchmod +x your-app\n\n<span class=\"comment\"># Run directly</span>\n./your-app [arguments...]" },
+          { "type": "callout", "text": "💡 <strong>Single-file distribution is the best user experience</strong> — users don't need to know any hardening details, just like using a regular program." },
+          { "type": "h3", "text": "5.3 Comparison with Other Distribution Methods" },
+          { "type": "table", "headers": ["Aspect", "Standard (.wpk + runtime)", "Self-Extracting (this guide)"], "rows": [
+            ["Files to distribute", "2 files", "<strong>1 file</strong>"],
+            ["User action", "Run runtime command", "<strong>Run ./app directly</strong>"],
+            ["User needs to know", "Runtime args, seed value", "<strong>Nothing</strong>"],
+            ["First-run delay", "No extra delay", "~950ms (extraction overhead)"],
+            ["Best for", "Frequent server-side calls", "<strong>End-user distribution</strong>"]
+          ]}
+        ]
+      },
+      {
+        "id": "advanced",
+        "num": "6",
+        "title": "Advanced Usage",
+        "blocks": [
+          { "type": "h3", "text": "6.1 Output .wpk File Only (Compatibility Mode)" },
+          { "type": "p", "text": "If you don't need a self-extracting binary and prefer a traditional .wpk file:" },
+          { "type": "code", "text": "./wasm-packer --wpk-only --input hello.wasm --output hello.wpk --level L2 --seed 42" },
+          { "type": "callout-warning", "text": "📌 <span class=\"inline-code\">--wpk-only</span> mode produces a .wpk file that requires a runtime to execute — it cannot run on its own." },
+          { "type": "h3", "text": "6.2 Runtime Mode" },
+          { "type": "p", "text": "For advanced users, you can directly invoke the embedded runtime:" },
+          { "type": "code", "text": "<span class=\"comment\"># --runtime or -R forwards to the runtime directly</span>\n./wasm-packer --runtime --input &lt;wpk_file&gt; --func &lt;name&gt; --seed &lt;n&gt; [options...]\n\n<span class=\"comment\"># WASI CLI mode</span>\n./wasm-packer --runtime --run-wasi --input &lt;wpk_file&gt; --seed &lt;n&gt; -- [wasi_args...]" },
+          { "type": "h3", "text": "6.3 View Usage Limits" },
+          { "type": "p", "text": "If the program has usage limits set, end users can view them via runtime mode:" },
+          { "type": "code", "text": "./wasm-packer --runtime --input your-program.wpk --seed <span class=\"string\">&lt;key_number&gt;</span> --show-limits" },
+          { "type": "p", "text": "Example output:" },
+          { "type": "code", "text": "<span class=\"highlight\">Expiry: 2027-01-01T00:00:00Z (297 days remaining)\nMax runs: 1000 (985 remaining, 15 used)</span>" },
+          { "type": "h3", "text": "6.4 Performance Optimization Options" },
+          { "type": "p", "text": "When running .wpk files via runtime mode, you can enable performance optimizations:" },
+          { "type": "code", "text": "./wasm-packer --runtime --input &lt;wpk_file&gt; --func &lt;function_name&gt; --seed &lt;n&gt; \\\n  --cache --decode-cache --parallel --mmap" },
+          { "type": "table", "headers": ["Option", "Effect", "Recommendation"], "rows": [
+            ["<span class=\"inline-code\">--cache</span>", "Cache compilation results for instant subsequent runs", "Recommended"],
+            ["<span class=\"inline-code\">--decode-cache</span>", "Cache decode results, skip repeated decoding", "Recommended"],
+            ["<span class=\"inline-code\">--parallel</span>", "Multi-core parallel decoding", "Recommended for large files"],
+            ["<span class=\"inline-code\">--mmap</span>", "Zero-copy file loading", "Recommended for large files"]
+          ]},
+          { "type": "callout-warning", "text": "📌 Self-extracting binaries (running <span class=\"inline-code\">./hello</span> directly) do not currently support these optimization options. For high-frequency call scenarios, use <span class=\"inline-code\">--wpk-only</span> mode with the runtime." }
+        ]
+      }
+    ]
+  },
+
+  "faqPage": {
+    "pageTitle": "FAQ — Seed",
+    "backText": "Back to Home",
+    "title": "FAQ",
+    "subtitle": "Everything you need to know about Seed.",
+    "categories": [
+      {
+        "icon": "💡",
+        "title": "Product & Features",
+        "items": [
+          { "q": "Does Seed affect program functionality?", "a": "No. Seed's protection is transparent — the hardened program functions identically to the original." },
+          { "q": "Will hardened programs run slower?", "a": "Barely. The recommended L2 plan adds less than 1% runtime overhead, with near-zero overhead on cached runs." },
+          { "q": "Which operating systems are supported?", "a": "Seed currently supports macOS and Linux. Windows support is coming soon." },
+          { "q": "Can it protect programs of any size?", "a": "Yes. Seed has been tested on WebAssembly programs ranging from 125 bytes to 48 MB, all performing stably." },
+          { "q": "Will protected files become much larger?", "a": "No. File size growth is under 0.1%, adding only minimal metadata overhead." },
+          { "q": "Which programming languages does Seed support?", "a": "Seed supports 14 languages: Rust, C/C++, Go, Zig, AssemblyScript (native support), plus Java, Kotlin, Scala, C#, JavaScript, Python, Dart, Ruby, Objective-C (toolchain support)." }
+        ]
+      },
+      {
+        "icon": "🔧",
+        "title": "Usage & Technical",
+        "items": [
+          { "q": "Is it normal that the output file is large?", "a": "The self-extracting binary size is mainly determined by the embedded runtime (~33 MB), which is a fixed overhead. The wasm program itself adds less than 0.1%. If your original wasm is only a few KB, ~33 MB output is normal." },
+          { "q": "Is it normal for the first run to be slow?", "a": "Yes. Self-extracting mode has ~950ms extra delay on first run (for extracting runtime and protected program from itself). This is a one-time cost. Use --wpk-only mode if latency-sensitive." },
+          { "q": "Can I protect multiple files?", "a": "Yes. Run the hardening command separately for each .wasm file. Using different seeds for each is recommended." },
+          { "q": "Which platforms are supported for hardened output?", "a": "The output is a self-extracting binary with platform-specific embedded runtime. Currently supports macOS and Linux. Separate hardening is needed per platform." },
+          { "q": "What if I lose the seed?", "a": "In self-extracting mode, the seed is embedded in the output. End users don't need it. But you need the seed to re-harden (e.g., for updates). Keep it backed up securely." },
+          { "q": "Can hardened programs be tampered with?", "a": "If --sign was enabled during hardening, the program has digital signature protection. Any file tampering causes signature verification failure." },
+          { "q": "What does \"No valid WPKSFX trailer found\" mean?", "a": "The executable's trailing data is corrupted. Please re-obtain the original hardened output." },
+          { "q": "Should I use self-extracting or wpk-only mode?", "a": "End-user distribution → self-extracting (single file); Frequent server-side calls → wpk-only (avoid repeated extraction overhead); Size-sensitive → wpk-only (with pre-installed runtime)." }
+        ]
+      }
+    ],
+    "footerText": "Can't find your question? Feel free to contact our support team."
+  },
+
+  "contact": {
+    "pageTitle": "Request Access — Seed",
+    "backText": "Back to Home",
+    "title": "Request Access to Seed",
+    "subtitle": "Fill in the form below and we'll get back to you with a trial version.",
+    "form": {
+      "labelName": "Name",
+      "labelCompany": "Company / Organization",
+      "labelEmail": "Work Email",
+      "labelPlatform": "Target Platform",
+      "labelLanguage": "Primary Language",
+      "labelUseCase": "Use Case Description",
+      "optPlatformDefault": "Select",
+      "optLangDefault": "Select",
+      "optLangOther": "Other",
+      "submitText": "Submit Request",
+      "submittingText": "Submitting...",
+      "placeholderName": "Your name",
+      "placeholderCompany": "Company or organization (optional)",
+      "placeholderEmail": "you@company.com",
+      "placeholderUseCase": "Briefly describe your use case, e.g., protecting core algorithms, preventing reverse engineering..."
+    },
+    "success": {
+      "title": "Request Submitted!",
+      "message": "Thank you for your interest. We'll contact you via email within 1-2 business days."
+    },
+    "error": {
+      "title": "Submission Failed",
+      "message": "Sorry, something went wrong during submission. Please try again later, or email us directly at {email}.",
+      "retryText": "Try Again"
+    },
+    "note": "We respect your privacy. Information submitted is only used for trial request processing.",
+    "mail": {
+      "subject": "Seed Trial Request - {name}",
+      "fieldName": "Name",
+      "fieldCompany": "Company",
+      "fieldEmail": "Email",
+      "fieldPlatform": "Platform",
+      "fieldLanguage": "Language",
+      "fieldUseCase": "Use Case",
+      "notFilled": "N/A",
+      "notSelected": "N/A"
+    }
+  }
+}

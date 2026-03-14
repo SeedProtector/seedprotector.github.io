@@ -1,0 +1,366 @@
+{
+  "nav": {
+    "features": "核心优势",
+    "languages": "语言支持",
+    "pricing": "方案",
+    "guide": "使用教程",
+    "faq": "常见问题",
+    "getStarted": "立即体验"
+  },
+  "hero": {
+    "badge": "WebAssembly 字节码保护",
+    "slogan": "芥子纳须弥，代码藏乾坤。",
+    "subtitle": "WebAssembly 字节码保护工具，帮助开发者将编译后的程序进行深度加固，防止逆向工程、代码窃取和未授权使用。",
+    "cta": "立即开始",
+    "ctaSecondary": "了解更多",
+    "securityFeatures": "安全增强能力"
+  },
+  "problem": {
+    "title": "为什么需要 Seed？",
+    "subtitle": "标准 .wasm 文件几乎是\"明文\"状态 —— 任何人都可以用反编译工具轻松还原你的代码逻辑。",
+    "items": [
+      { "pain": "算法被逆向还原", "solution": "多层加固保护，让反编译结果无法理解" },
+      { "pain": "代码被竞对抄袭", "solution": "深度混淆，代码结构面目全非" },
+      { "pain": "产品被无限制使用", "solution": "内置有效期和使用次数控制" },
+      { "pain": "二进制文件被篡改", "solution": "数字签名 + 完整性校验，篡改即失效" },
+      { "pain": "分发后失去控制", "solution": "商业授权系统，精准管控每一份副本" }
+    ]
+  },
+  "protection": {
+    "title": "三级渐进式保护",
+    "subtitle": "根据安全需求和性能要求灵活选择保护级别",
+    "recommended": "推荐",
+    "perfImpact": "性能影响",
+    "levels": [
+      { "name": "L1", "label": "基础保护", "stars": 2, "perf": "极低", "desc": "一般性保护，快速部署" },
+      { "name": "L2", "label": "推荐方案", "stars": 3, "perf": "极低", "desc": "兼顾安全与性能，适合大多数场景", "recommended": true },
+      { "name": "L3", "label": "深度保护", "stars": 4, "perf": "低", "desc": "高安全需求，核心算法保护" }
+    ]
+  },
+  "security": {
+    "title": "十重安全增强",
+    "subtitle": "覆盖从数据到代码、从静态分析到动态调试的全方位防护",
+    "features": [
+      { "icon": "🔐", "name": "数据保护", "desc": "常量、密钥、URL 等敏感数据自动混淆" },
+      { "icon": "👁️‍🗨️", "name": "名称隐藏", "desc": "函数名、接口名完全不可见" },
+      { "icon": "🌀", "name": "代码混淆", "desc": "控制流打乱 + 代码膨胀 + 指令变形" },
+      { "icon": "✍️", "name": "数字签名", "desc": "文件完整性验证，篡改即检测" },
+      { "icon": "🔑", "name": "密钥安全", "desc": "多级密钥派生体系，杜绝密钥关联" },
+      { "icon": "🛡️", "name": "反调试", "desc": "动态调试检测与对抗" },
+      { "icon": "⏱️", "name": "使用限制", "desc": "有效期 + 运行次数双重管控" },
+      { "icon": "🚫", "name": "防篡改", "desc": "限制信息完整性保护，修改即失效" },
+      { "icon": "📜", "name": "商业授权", "desc": "编码工具自带授权管控，精准分发" },
+      { "icon": "📦", "name": "自解压分发", "desc": "单文件分发，开箱即用" }
+    ]
+  },
+  "languages": {
+    "title": "14 种编程语言支持",
+    "subtitle": "无论你的项目使用什么语言，Seed 都能保护",
+    "tier1Label": "第一梯队 — 原生支持",
+    "tier2Label": "第二梯队 — 工具链支持",
+    "tier1": ["Rust", "C/C++", "Go", "Zig", "AssemblyScript"],
+    "tier2": ["Java", "Kotlin", "Scala", "C#", "JavaScript", "Python", "Dart", "Ruby", "Objective-C"]
+  },
+  "stats": {
+    "title": "近零性能损耗",
+    "items": [
+      { "value": "< 0.1%", "label": "文件体积增长" },
+      { "value": "< 1%", "label": "运行时额外开销" },
+      { "value": "≈ 0%", "label": "二次运行开销" },
+      { "value": "14", "label": "支持语言数" }
+    ]
+  },
+  "workflow": {
+    "title": "四步完成加固",
+    "subtitle": "只需四步，你的代码就从\"裸奔\"变为\"全副武装\"",
+    "steps": [
+      { "num": "01", "title": "准备代码", "desc": "编写你的业务逻辑和核心算法" },
+      { "num": "02", "title": "编译为 Wasm", "desc": "使用对应语言的工具链编译为 .wasm 文件" },
+      { "num": "03", "title": "Seed 加固", "desc": "一行命令完成深度保护" },
+      { "num": "04", "title": "安全分发", "desc": "以加固后的形态交付给用户" }
+    ]
+  },
+  "useCases": {
+    "title": "谁在使用 Seed？",
+    "items": [
+      { "icon": "🏢", "name": "软件厂商", "desc": "保护核心算法和业务逻辑的知识产权" },
+      { "icon": "🎮", "name": "游戏开发者", "desc": "防止外挂和反编译，保护游戏逻辑" },
+      { "icon": "🔐", "name": "安全公司", "desc": "加固安全敏感模块，防止分析" },
+      { "icon": "📊", "name": "数据处理", "desc": "保护数据处理算法和分析模型" },
+      { "icon": "🤖", "name": "AI / ML", "desc": "保护推理模型和特征工程代码" },
+      { "icon": "💰", "name": "金融科技", "desc": "保护交易算法和风控模型" }
+    ]
+  },
+  "distribution": {
+    "title": "灵活的分发方式",
+    "modes": [
+      { "name": "标准分发", "product": "加固工具 + 运行时", "scenario": "内部使用、可信环境" },
+      { "name": "自加固分发", "product": "受保护的加固工具 + 运行时", "scenario": "对外分发、防止工具被分析" },
+      { "name": "单文件分发", "product": "单一可执行文件", "scenario": "最终用户交付，开箱即用", "recommended": true }
+    ]
+  },
+  "faq": {
+    "title": "常见问题",
+    "items": [
+      { "q": "Seed 会影响程序功能吗？", "a": "不会。Seed 的保护是透明的，加固后的程序功能与原始程序完全一致。" },
+      { "q": "加固后的程序会变慢吗？", "a": "几乎不会。L2 推荐方案的运行时额外开销不到 1%，二次运行几乎为零开销。" },
+      { "q": "支持哪些操作系统？", "a": "Seed 目前支持 macOS 和 Linux，Windows 支持即将推出。" },
+      { "q": "可以保护任意大小的程序吗？", "a": "是的。Seed 已在从 125 字节到 48 MB 的 WebAssembly 程序上完成测试，均表现稳定。" },
+      { "q": "保护后的文件会变大很多吗？", "a": "不会。文件体积增长不到 0.1%，仅增加极少量的元数据开销。" }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 Seed 芥子. 保留所有权利。",
+    "tagline": "让每一行代码都安全无忧。"
+  },
+
+  "guide": {
+    "pageTitle": "使用教程 — Seed 芥子",
+    "backText": "返回首页",
+    "title": "使用教程",
+    "subtitle": "了解如何使用 Seed 芥子（自解压版）保护和运行你的 WebAssembly 程序。",
+    "tocTitle": "目录",
+    "toc": ["概述", "准备工作", "加固你的程序", "运行受保护的程序", "分发给最终用户", "高级用法"],
+    "footerText": "💡 更多问题请联系 Seed 芥子技术支持团队。",
+    "sections": [
+      {
+        "id": "overview",
+        "num": "1",
+        "title": "概述",
+        "blocks": [
+          { "type": "p", "text": "你拿到的 <span class=\"inline-code\">wasm-packer</span> 是一个<strong>自解压可执行文件</strong>（单一文件）。它内含受保护的加固引擎和运行时，无需安装任何依赖，开箱即用。" },
+          { "type": "p", "text": "<strong>核心流程只需两步：</strong>" },
+          { "type": "flow", "text": "┌──────────────┐    加固     ┌──────────────┐    分发     ┌──────────────┐\n│  hello.wasm  │ ─────────→ │    hello     │ ─────────→ │  ./hello     │\n│ (你的程序)    │  wasm-packer │ (自解压二进制) │   单文件交付  │ 用户直接运行   │\n└──────────────┘             └──────────────┘             └──────────────┘" },
+          { "type": "p", "text": "<strong>特点：</strong>" },
+          { "type": "ul", "items": [
+            "你拿到的是<strong>单一可执行文件</strong> <span class=\"inline-code\">wasm-packer</span>",
+            "加固后产出的也是<strong>单一可执行文件</strong>",
+            "最终用户无需安装 runtime，无需了解加固细节，<strong>直接运行</strong>即可"
+          ]}
+        ]
+      },
+      {
+        "id": "preparation",
+        "num": "2",
+        "title": "准备工作",
+        "blocks": [
+          { "type": "h3", "text": "2.1 获取 wasm-packer" },
+          { "type": "p", "text": "从分发包中获取 <span class=\"inline-code\">wasm-packer</span> 可执行文件：" },
+          { "type": "code", "text": "<span class=\"comment\"># 解压分发包</span>\ntar xzf seed-芥子-&lt;平台&gt;-&lt;版本&gt;.tar.gz\n\n<span class=\"comment\"># 确认 wasm-packer 可执行</span>\n./wasm-packer" },
+          { "type": "p", "text": "运行后会看到帮助信息：" },
+          { "type": "code", "text": "wasm-packer (self-extracting) — WebAssembly 字节码保护工具\n\n这是一个自解压可执行文件，内含受保护的 encoder 和 runtime。\n对 wasm 文件加固后，产出的也是一个自解压可执行二进制。\n\nencoder 模式（默认）— 加固 wasm，产出自解压二进制:\n  ./wasm-packer --input &lt;wasm_file&gt; --output &lt;sfx_binary&gt; --level &lt;L1|L2|L3&gt; --seed &lt;n&gt;" },
+          { "type": "h3", "text": "2.2 准备你的 WebAssembly 文件" },
+          { "type": "p", "text": "在使用 Seed 加固之前，你需要先将项目编译为标准的 <span class=\"inline-code\">.wasm</span> 文件。Seed 支持 <strong>14 种编程语言</strong>。" },
+          { "type": "table", "headers": ["语言", "语言"], "rows": [
+            ["Rust", "Java"],
+            ["C/C++", "Kotlin"],
+            ["Go", "Scala"],
+            ["Zig", "C#"],
+            ["AssemblyScript", "JavaScript"],
+            ["Python", "Dart"],
+            ["Ruby", "Objective-C"]
+          ]},
+          { "type": "p", "text": "编译完成后，你会得到一个 <span class=\"inline-code\">.wasm</span> 文件，这就是 Seed 加固的输入。" }
+        ]
+      },
+      {
+        "id": "harden",
+        "num": "3",
+        "title": "加固你的程序",
+        "blocks": [
+          { "type": "h3", "text": "3.1 基础加固" },
+          { "type": "p", "text": "最简单的加固只需要一行命令：" },
+          { "type": "code", "text": "./wasm-packer --input 你的程序.wasm --output 你的程序 --level L2 --seed <span class=\"string\">&lt;密钥数字&gt;</span>" },
+          { "type": "table", "headers": ["参数", "说明", "示例"], "rows": [
+            ["<span class=\"inline-code\">--input</span>", "输入的 .wasm 文件", "hello.wasm"],
+            ["<span class=\"inline-code\">--output</span>", "输出的自解压可执行文件名（不需要扩展名）", "hello"],
+            ["<span class=\"inline-code\">--level</span>", "保护级别（L1 / L2 / L3）", "L2（推荐）"],
+            ["<span class=\"inline-code\">--seed</span>", "加密密钥（一个数字）", "42"]
+          ]},
+          { "type": "callout", "text": "💡 <strong>密钥（seed）</strong> 已嵌入产物中，最终用户运行时无需提供密钥。请妥善保管密钥以备将来重新加固。" },
+          { "type": "p", "text": "<strong>完整示例：</strong>" },
+          { "type": "code", "text": "<span class=\"comment\"># 加固 hello.wasm，产出自解压二进制 hello</span>\n./wasm-packer --input hello.wasm --output hello --level L2 --seed 42" },
+          { "type": "p", "text": "输出：" },
+          { "type": "code", "text": "<span class=\"highlight\">✅ Self-extracting binary: hello (33802240 bytes)</span>\n   stub: 307200 bytes, runtime: 33489920 bytes, wpk: 5072 bytes" },
+          { "type": "p", "text": "产出的 <span class=\"inline-code\">hello</span> 就是一个可以直接运行的自解压可执行文件。" },
+          { "type": "h3", "text": "3.2 选择保护级别" },
+          { "type": "table", "headers": ["级别", "安全性", "性能影响", "推荐场景"], "rows": [
+            ["L1", "基础", "极低", "快速保护，一般场景"],
+            ["<strong>L2</strong>", "<strong>高</strong>", "<strong>极低</strong>", "<strong>推荐，适合大多数场景</strong>"],
+            ["L3", "很高", "低", "核心算法，最高安全需求"]
+          ]},
+          { "type": "h3", "text": "3.3 全面保护（推荐）" },
+          { "type": "p", "text": "开启所有安全增强选项，获得最全面的保护：" },
+          { "type": "code", "text": "./wasm-packer --input 你的程序.wasm --output 你的程序 --level L2 --seed <span class=\"string\">&lt;密钥数字&gt;</span> \\\n  --obfuscate-data \\\n  --obfuscate-names \\\n  --obfuscate-code \\\n  --sign \\\n  --hkdf" },
+          { "type": "table", "headers": ["选项", "保护内容"], "rows": [
+            ["<span class=\"inline-code\">--obfuscate-data</span>", "保护程序中的常量数据（字符串、密钥、URL 等）"],
+            ["<span class=\"inline-code\">--obfuscate-names</span>", "隐藏函数名称和接口名称"],
+            ["<span class=\"inline-code\">--obfuscate-code</span>", "深度代码混淆（控制流 + 膨胀 + 变形）"],
+            ["<span class=\"inline-code\">--sign</span>", "添加数字签名，防止文件被篡改"],
+            ["<span class=\"inline-code\">--hkdf</span>", "增强密钥安全性"]
+          ]},
+          { "type": "h3", "text": "3.4 设置使用限制（可选）" },
+          { "type": "p", "text": "你可以为加固后的程序设置有效期和使用次数限制：" },
+          { "type": "code", "text": "./wasm-packer --input 你的程序.wasm --output 你的程序 --level L2 --seed <span class=\"string\">&lt;密钥数字&gt;</span> \\\n  --obfuscate-data --obfuscate-names --obfuscate-code --sign --hkdf \\\n  --expires <span class=\"string\">\"2027-01-01T00:00:00Z\"</span> \\\n  --max-runs <span class=\"string\">1000</span>" },
+          { "type": "table", "headers": ["选项", "说明", "示例"], "rows": [
+            ["<span class=\"inline-code\">--expires</span>", "设置过期时间（ISO 8601 格式）", "\"2027-01-01T00:00:00Z\""],
+            ["<span class=\"inline-code\">--max-runs</span>", "设置最大运行次数", "1000"]
+          ]},
+          { "type": "callout-warning", "text": "📌 使用限制信息受完整性保护，无法被篡改或绕过。" }
+        ]
+      },
+      {
+        "id": "run",
+        "num": "4",
+        "title": "运行受保护的程序",
+        "blocks": [
+          { "type": "p", "text": "加固后产出的是一个<strong>自解压可执行文件</strong>，运行时会自动从文件自身解压出 runtime 和受保护的程序，然后执行。用户无需了解任何加固细节。" },
+          { "type": "h3", "text": "4.1 独立程序模式（WASI CLI）" },
+          { "type": "p", "text": "适用于：命令行工具、服务端程序等有完整 main() 入口的程序。" },
+          { "type": "code", "text": "<span class=\"comment\"># 直接运行，就像运行普通程序一样</span>\n./hello [程序参数...]\n\n<span class=\"comment\"># 示例</span>\n./calc add 3 4\n<span class=\"highlight\"># 输出: 7</span>\n\n./file-tool --input data.txt --output result.txt" },
+          { "type": "callout", "text": "💡 <strong>这就是最终用户看到的全部</strong> —— 一个普通的可执行文件，直接运行即可。" },
+          { "type": "h3", "text": "4.2 函数调用模式" },
+          { "type": "p", "text": "适用于：算法库、计算模块等需要调用指定导出函数的程序。" },
+          { "type": "code", "text": "<span class=\"comment\"># 调用导出函数</span>\n./hello --func &lt;函数名&gt; --args <span class=\"string\">\"&lt;参数列表&gt;\"</span>\n\n<span class=\"comment\"># 示例：调用 add 函数，传入参数 3 和 4</span>\n./math --func add --args <span class=\"string\">\"3,4\"</span>\n<span class=\"highlight\"># 输出: 7</span>\n\n<span class=\"comment\"># 调用 fibonacci 函数</span>\n./math --func fibonacci --args <span class=\"string\">\"10\"</span>\n<span class=\"highlight\"># 输出: 55</span>" },
+          { "type": "h3", "text": "4.3 显式 WASI 模式" },
+          { "type": "p", "text": "如果需要显式指定以 WASI CLI 模式运行：" },
+          { "type": "code", "text": "./hello --run-wasi -- [程序参数...]" }
+        ]
+      },
+      {
+        "id": "distribute",
+        "num": "5",
+        "title": "分发给最终用户",
+        "blocks": [
+          { "type": "p", "text": "这是自解压模式最大的优势 —— <strong>分发极其简单</strong>。" },
+          { "type": "h3", "text": "5.1 分发内容" },
+          { "type": "p", "text": "只需要交付<strong>一个文件</strong>：" },
+          { "type": "code", "text": "delivery/\n└── your-app         <span class=\"comment\"># 单一可执行文件，用户直接运行</span>" },
+          { "type": "p", "text": "无需附带 runtime、无需附带 .wpk 文件、无需安装说明。" },
+          { "type": "h3", "text": "5.2 用户使用方式" },
+          { "type": "p", "text": "用户拿到文件后：" },
+          { "type": "code", "text": "<span class=\"comment\"># 赋予执行权限（如果需要）</span>\nchmod +x your-app\n\n<span class=\"comment\"># 直接运行</span>\n./your-app [参数...]" },
+          { "type": "callout", "text": "💡 <strong>单文件分发是最佳的用户体验</strong> —— 用户无需了解任何加固细节，就像使用普通程序一样。" },
+          { "type": "h3", "text": "5.3 与其他分发方式的对比" },
+          { "type": "table", "headers": ["维度", "标准分发 (.wpk + runtime)", "自解压分发（本教程）"], "rows": [
+            ["分发文件数", "2 个", "<strong>1 个</strong>"],
+            ["用户操作", "需要运行 runtime 命令", "<strong>直接运行 ./app</strong>"],
+            ["用户需要了解", "runtime 参数、seed 值", "<strong>无需了解</strong>"],
+            ["首次运行延迟", "无额外延迟", "~950ms（自解压开销）"],
+            ["适用场景", "服务端频繁调用", "<strong>终端用户分发</strong>"]
+          ]}
+        ]
+      },
+      {
+        "id": "advanced",
+        "num": "6",
+        "title": "高级用法",
+        "blocks": [
+          { "type": "h3", "text": "6.1 只输出 .wpk 文件（兼容模式）" },
+          { "type": "p", "text": "如果你不需要自解压二进制，而是希望产出传统的 .wpk 文件：" },
+          { "type": "code", "text": "./wasm-packer --wpk-only --input hello.wasm --output hello.wpk --level L2 --seed 42" },
+          { "type": "callout-warning", "text": "📌 <span class=\"inline-code\">--wpk-only</span> 模式产出的 .wpk 文件需要配合 runtime 使用，不能直接运行。" },
+          { "type": "h3", "text": "6.2 runtime 模式" },
+          { "type": "p", "text": "对于高级用户，可以直接调用内嵌的 runtime：" },
+          { "type": "code", "text": "<span class=\"comment\"># --runtime 或 -R 表示直接转发给 runtime</span>\n./wasm-packer --runtime --input &lt;wpk_file&gt; --func &lt;name&gt; --seed &lt;n&gt; [选项...]\n\n<span class=\"comment\"># WASI CLI 模式</span>\n./wasm-packer --runtime --run-wasi --input &lt;wpk_file&gt; --seed &lt;n&gt; -- [wasi_args...]" },
+          { "type": "h3", "text": "6.3 查看使用限制" },
+          { "type": "p", "text": "如果程序设置了使用限制，最终用户可以通过 runtime 模式查看：" },
+          { "type": "code", "text": "./wasm-packer --runtime --input 你的程序.wpk --seed <span class=\"string\">&lt;密钥数字&gt;</span> --show-limits" },
+          { "type": "p", "text": "输出示例：" },
+          { "type": "code", "text": "<span class=\"highlight\">Expiry: 2027-01-01T00:00:00Z (297 days remaining)\nMax runs: 1000 (985 remaining, 15 used)</span>" },
+          { "type": "h3", "text": "6.4 性能优化选项" },
+          { "type": "p", "text": "当通过 runtime 模式运行 .wpk 文件时，可以开启性能优化：" },
+          { "type": "code", "text": "./wasm-packer --runtime --input &lt;wpk_file&gt; --func &lt;函数名&gt; --seed &lt;n&gt; \\\n  --cache --decode-cache --parallel --mmap" },
+          { "type": "table", "headers": ["选项", "作用", "建议"], "rows": [
+            ["<span class=\"inline-code\">--cache</span>", "缓存编译结果，二次运行极速启动", "推荐开启"],
+            ["<span class=\"inline-code\">--decode-cache</span>", "缓存解码结果，跳过重复解码", "推荐开启"],
+            ["<span class=\"inline-code\">--parallel</span>", "多核并行解码", "大文件推荐"],
+            ["<span class=\"inline-code\">--mmap</span>", "零拷贝文件加载", "大文件推荐"]
+          ]},
+          { "type": "callout-warning", "text": "📌 自解压二进制（直接 <span class=\"inline-code\">./hello</span> 运行）暂不支持这些优化选项。如果需要高频调用的场景，建议使用 <span class=\"inline-code\">--wpk-only</span> 模式配合 runtime 使用。" }
+        ]
+      }
+    ]
+  },
+
+  "faqPage": {
+    "pageTitle": "常见问题 — Seed 芥子",
+    "backText": "返回首页",
+    "title": "常见问题",
+    "subtitle": "关于 Seed 芥子你想知道的一切。",
+    "categories": [
+      {
+        "icon": "💡",
+        "title": "产品与功能",
+        "items": [
+          { "q": "Seed 会影响程序功能吗？", "a": "不会。Seed 的保护是透明的，加固后的程序功能与原始程序完全一致。" },
+          { "q": "加固后的程序会变慢吗？", "a": "几乎不会。L2 推荐方案的运行时额外开销不到 1%，二次运行几乎为零开销。" },
+          { "q": "支持哪些操作系统？", "a": "Seed 目前支持 macOS 和 Linux，Windows 支持即将推出。" },
+          { "q": "可以保护任意大小的程序吗？", "a": "是的。Seed 已在从 125 字节到 48 MB 的 WebAssembly 程序上完成测试，均表现稳定。" },
+          { "q": "保护后的文件会变大很多吗？", "a": "不会。文件体积增长不到 0.1%，仅增加极少量的元数据开销。" },
+          { "q": "Seed 支持哪些编程语言？", "a": "Seed 支持 14 种编程语言：Rust、C/C++、Go、Zig、AssemblyScript（原生支持），以及 Java、Kotlin、Scala、C#、JavaScript、Python、Dart、Ruby、Objective-C（工具链支持）。" }
+        ]
+      },
+      {
+        "icon": "🔧",
+        "title": "使用与技术",
+        "items": [
+          { "q": "加固后产出的文件比较大正常吗？", "a": "自解压二进制的体积主要由内嵌的 runtime（~33 MB）决定，这是固定开销。wasm 程序本身的膨胀率极低（不到 0.1%）。如果你的原始 wasm 文件只有几 KB，产出约 33 MB 左右是正常的。" },
+          { "q": "首次运行有点慢正常吗？", "a": "是的。自解压模式首次运行约有 ~950ms 的额外延迟（用于从自身文件中解压 runtime 和受保护程序）。这是一次性开销。如果对延迟敏感，建议使用 --wpk-only 模式。" },
+          { "q": "可以同时保护多个文件吗？", "a": "可以。对每个 .wasm 文件分别执行加固命令即可。建议使用不同的 seed 以增强安全性。" },
+          { "q": "加固后的程序支持哪些平台？", "a": "加固产物是自解压二进制，其中内嵌的 runtime 是编译时确定的目标平台。目前支持 macOS 和 Linux。需要为不同平台分别加固。" },
+          { "q": "密钥（seed）丢失了怎么办？", "a": "自解压模式下，seed 已嵌入产物中，最终用户运行时无需提供 seed。但如果你需要重新加固（如更新程序版本），就需要 seed。请在安全的地方备份密钥。" },
+          { "q": "加固后的程序可以被篡改吗？", "a": "如果在加固时开启了 --sign 选项，程序自带数字签名保护。任何对文件的篡改都会导致签名验证失败，程序无法运行。" },
+          { "q": "运行时提示 \"No valid WPKSFX trailer found\" 怎么办？", "a": "这说明可执行文件的尾部数据受损。请重新获取原始的加固产物。" },
+          { "q": "我应该选择自解压模式还是 wpk-only 模式？", "a": "分发给终端用户（CLI 工具）→ 自解压（单文件分发）；服务端频繁调用 → wpk-only（避免重复解压开销）；体积敏感 → wpk-only（配合预装 runtime）。" }
+        ]
+      }
+    ],
+    "footerText": "没有找到你的问题？欢迎联系我们的技术支持团队。"
+  },
+
+  "contact": {
+    "pageTitle": "申请体验 — Seed 芥子",
+    "backText": "返回首页",
+    "title": "申请体验 Seed 芥子",
+    "subtitle": "填写以下信息，我们会尽快与您联系并提供试用版本。",
+    "form": {
+      "labelName": "姓名",
+      "labelCompany": "公司 / 组织",
+      "labelEmail": "工作邮箱",
+      "labelPlatform": "目标平台",
+      "labelLanguage": "主要编程语言",
+      "labelUseCase": "使用场景描述",
+      "optPlatformDefault": "请选择",
+      "optLangDefault": "请选择",
+      "optLangOther": "其他",
+      "submitText": "提交申请",
+      "submittingText": "提交中...",
+      "placeholderName": "请输入您的姓名",
+      "placeholderCompany": "公司或组织名称（可选）",
+      "placeholderEmail": "you@company.com",
+      "placeholderUseCase": "请简要描述您的使用场景，例如：保护核心算法、防止代码逆向等..."
+    },
+    "success": {
+      "title": "申请已提交！",
+      "message": "感谢您的兴趣，我们会在 1-2 个工作日内通过邮件与您联系。"
+    },
+    "error": {
+      "title": "提交失败",
+      "message": "抱歉，提交过程中出现了问题。请稍后重试，或直接发送邮件至 {email} 联系我们。",
+      "retryText": "重新提交"
+    },
+    "note": "我们重视您的隐私，提交的信息仅用于试用申请处理。",
+    "mail": {
+      "subject": "Seed 芥子试用申请 - {name}",
+      "fieldName": "姓名",
+      "fieldCompany": "公司",
+      "fieldEmail": "邮箱",
+      "fieldPlatform": "目标平台",
+      "fieldLanguage": "编程语言",
+      "fieldUseCase": "使用场景",
+      "notFilled": "未填写",
+      "notSelected": "未选择"
+    }
+  }
+}
