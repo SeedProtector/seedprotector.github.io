@@ -11,7 +11,9 @@ web/
 │   └── style.css           # 样式文件
 ├── js/
 │   ├── i18n.js             # 国际化模块
-│   └── app.js              # 主应用逻辑
+│   ├── app.js              # 主应用逻辑
+│   ├── env.js              # ⚠️ 邮箱配置（.gitignore，CI 自动生成）
+│   └── env.js.example      # env.js 模板（本地开发用）
 ├── data/
 │   ├── site.json           # 站点全局配置（品牌、SEO、颜色、链接等）
 │   └── i18n/
@@ -82,10 +84,20 @@ npx serve web
 
 部署时 GitHub Actions 会自动：
 1. 从 Secrets 读取环境变量
-2. 运行 `scripts/tools/inject_env.sh --env-only` 将值注入到 `web/data/site.json`
-3. 将 `web/` 目录部署到 GitHub Pages
+2. 生成 `web/js/env.js`，写入 `window.__EMAIL_CONFIG__ = { ... }`
+3. `contact.html` 通过 `<script src="js/env.js">` 加载该配置
+4. 将 `web/` 目录部署到 GitHub Pages
 
-**这样 `site.json` 在 Git 仓库中不包含真实邮箱和密钥，只在部署时动态注入。**
+**`env.js` 已在 `.gitignore` 中，不会被提交到仓库。真实邮箱和密钥只存在于 GitHub Secrets 和部署后的页面中。**
+
+### 本地开发
+
+本地开发时需要手动创建 `env.js`：
+
+```bash
+cp web/js/env.js.example web/js/env.js
+# 编辑 web/js/env.js，填入真实的邮箱和 EmailJS 配置
+```
 
 ## 语言切换
 
