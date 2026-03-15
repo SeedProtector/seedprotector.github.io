@@ -1,6 +1,6 @@
 # Seed 芥子 — 官方网站
 
-这是二进制加固工具 Seed 芥子产品的静态官方网站，支持中英文双语，可直接部署到 GitHub Pages 或任何静态托管服务。
+这是 Seed 芥子产品的静态官方网站，支持中英文双语，可直接部署到 GitHub Pages 或任何静态托管服务。
 
 ## 目录结构
 
@@ -58,9 +58,34 @@ npx serve web
 
 ## 部署到 GitHub Pages
 
-1. 将 `web/` 目录的内容推送到 GitHub 仓库的 `gh-pages` 分支（或 `docs/` 目录）
-2. 在仓库 Settings > Pages 中选择对应的分支和目录
-3. 访问 `https://<username>.github.io/<repo>/`
+项目已配置 GitHub Actions 自动部署（`.github/workflows/deploy-pages.yml`）。
+
+### 1. 配置 GitHub Secrets（敏感信息）
+
+在仓库 **Settings → Secrets and variables → Actions** 中添加以下 Secrets：
+
+| Secret 名称 | 说明 | 必填 |
+|---|---|---|
+| `SEED_CONTACT_EMAIL` | 联系邮箱地址（如 `your@gmail.com`） | ✅ |
+| `SEED_EMAILJS_PUBLIC_KEY` | EmailJS Public Key | 可选 |
+| `SEED_EMAILJS_SERVICE_ID` | EmailJS Service ID | 可选 |
+| `SEED_EMAILJS_TEMPLATE_ID` | EmailJS Template ID | 可选 |
+
+### 2. 启用 GitHub Pages
+
+1. 进入仓库 **Settings → Pages**
+2. **Source** 选择 **GitHub Actions**
+3. 推送代码到 `master` 分支（修改 `web/` 下的文件即触发部署）
+4. 访问 `https://<username>.github.io/<repo>/`
+
+### 工作原理
+
+部署时 GitHub Actions 会自动：
+1. 从 Secrets 读取环境变量
+2. 运行 `scripts/tools/inject_env.sh --env-only` 将值注入到 `web/data/site.json`
+3. 将 `web/` 目录部署到 GitHub Pages
+
+**这样 `site.json` 在 Git 仓库中不包含真实邮箱和密钥，只在部署时动态注入。**
 
 ## 语言切换
 
