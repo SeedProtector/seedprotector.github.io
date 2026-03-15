@@ -19,7 +19,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
-SITE_JSON="$PROJECT_ROOT/web/data/site.json"
+SITE_JSON="$PROJECT_ROOT/data/site.json"
 ENV_FILE="$PROJECT_ROOT/.env"
 
 # ---- Color helpers ----
@@ -178,4 +178,4 @@ PYTHON_SCRIPT
 ok "Done! site.json has been updated."
 echo ""
 info "Tip: Remember to NOT commit site.json with real credentials."
-info "     You can add 'web/data/site.json' to .gitignore if needed."
+info "     You can add 'data/site.json' to .gitignore if needed."
