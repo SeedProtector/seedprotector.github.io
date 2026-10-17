@@ -82,15 +82,70 @@ const I18n = (() => {
   }
 
   /**
-   * Update HTML lang attribute and page title
+   * Update language and page-specific search/social metadata.
    */
   function updatePageMeta() {
     document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
-    // Update title
-    const titleKey = currentLang === 'zh'
-      ? 'Seed 芥子 — WebAssembly 字节码保护工具'
-      : 'Seed — WebAssembly Bytecode Protection Tool';
-    document.title = titleKey;
+
+    const metadata = {
+      '/': {
+        zh: {
+          title: 'Seed 芥子 — WebAssembly 字节码加固与混淆工具',
+          description: 'Seed 芥子为 Rust、C/C++、Go 等 WebAssembly 项目提供字节码加固、代码混淆与授权控制，帮助开发者降低逆向分析、代码窃取和未授权使用风险。'
+        },
+        en: {
+          title: 'Seed — WebAssembly Bytecode Protection Tool',
+          description: 'Seed hardens WebAssembly bytecode with code obfuscation and licensing controls to help protect compiled modules from reverse engineering and unauthorized use.'
+        }
+      },
+      '/guide.html': {
+        zh: {
+          title: '使用教程 — Seed 芥子',
+          description: '查看 Seed 芥子使用教程，了解如何编译 WebAssembly、选择保护等级，并通过 wasm-packer 加固和运行自解压程序。'
+        },
+        en: {
+          title: 'User Guide — Seed',
+          description: 'Learn how to compile a WebAssembly module, choose a protection level, harden it with wasm-packer, and run or distribute the self-extracting output.'
+        }
+      },
+      '/faq.html': {
+        zh: {
+          title: '常见问题 — Seed 芥子',
+          description: '了解 Seed 芥子支持的操作系统与编程语言、保护等级、自解压模式、WPK 文件以及性能和授权相关问题。'
+        },
+        en: {
+          title: 'FAQ — Seed',
+          description: 'Find answers about Seed supported languages and platforms, protection levels, self-extracting binaries, WPK mode, performance, and licensing.'
+        }
+      },
+      '/contact.html': {
+        zh: {
+          title: '申请体验 — Seed 芥子',
+          description: '申请 Seed 芥子 WebAssembly 字节码保护工具试用，提交目标平台、编程语言和使用场景，了解如何为编译后的程序添加字节码加固。'
+        },
+        en: {
+          title: 'Request Access — Seed',
+          description: 'Request a Seed trial for WebAssembly bytecode protection. Share your target platform, programming language, and use case so the team can follow up.'
+        }
+      }
+    };
+
+    const path = window.location.pathname === '/index.html' ? '/' : window.location.pathname;
+    const page = metadata[path] || metadata['/'];
+    const content = page[currentLang] || page.zh;
+    document.title = content.title;
+
+    const description = document.querySelector('meta[name="description"]');
+    if (description) description.setAttribute('content', content.description);
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', content.title);
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) ogDescription.setAttribute('content', content.description);
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute('content', content.title);
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) twitterDescription.setAttribute('content', content.description);
   }
 
   /**

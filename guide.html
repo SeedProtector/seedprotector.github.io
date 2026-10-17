@@ -4,8 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>使用教程 — Seed 芥子</title>
-  <meta name="description" content="Seed 芥子使用教程：如何使用自解压模式保护和运行你的 WebAssembly 程序。">
-  <link rel="icon" type="image/png" href="assets/icons/seed-icon.png">
+  <meta name="description" content="查看 Seed 芥子使用教程，了解如何编译 WebAssembly、选择保护等级，并通过 wasm-packer 加固和运行自解压程序。">
+  <link rel="canonical" href="https://seedprotector.github.io/guide.html">
+  <meta property="og:title" content="使用教程 — Seed 芥子">
+  <meta property="og:description" content="了解如何编译 WebAssembly、选择保护等级，并通过 wasm-packer 加固和运行程序。">
+  <meta property="og:url" content="https://seedprotector.github.io/guide.html">
+  <meta property="og:image" content="https://seedprotector.github.io/assets/icons/seed-icon-256.png">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="使用教程 — Seed 芥子">
+  <meta name="twitter:description" content="Seed 芥子 WebAssembly 程序加固教程。">
+  <link rel="icon" type="image/png" href="assets/icons/seed-icon-256.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -217,8 +226,8 @@
   <!-- ========== Navigation ========== -->
   <nav class="navbar scrolled" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-brand">
-        <img src="assets/icons/seed-icon.png" alt="Seed Logo" class="nav-logo">
+      <a href="/" class="nav-brand">
+        <img src="assets/icons/seed-icon-256.png" alt="Seed Logo" class="nav-logo">
         <span class="nav-brand-text">Seed <span class="brand-cn">芥子</span></span>
       </a>
       <div class="nav-links" id="navLinks">
@@ -228,7 +237,7 @@
         <a href="faq.html" data-i18n="nav.faq">常见问题</a>
       </div>
       <div class="nav-actions">
-        <button class="lang-toggle" id="langToggle" title="Switch Language">
+        <button class="lang-toggle" id="langToggle" title="Switch Language" aria-label="Switch language / 切换语言">
           <span class="lang-icon">🌐</span>
           <span class="lang-label" id="langLabel">EN</span>
         </button>
@@ -244,14 +253,14 @@
   <main class="guide-page">
     <div class="guide-container">
 
-      <a href="index.html" class="guide-back">
+      <a href="/" class="guide-back">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        <span id="backText"></span>
+        <span id="backText">返回首页</span>
       </a>
 
       <div class="guide-header">
-        <h1 id="guideTitle"></h1>
-        <p id="guideSubtitle"></p>
+        <h1 id="guideTitle">使用教程</h1>
+        <p id="guideSubtitle">了解如何使用 Seed 芥子加固和运行 WebAssembly 程序。</p>
       </div>
 
       <!-- Table of Contents (rendered by JS) -->
@@ -283,7 +292,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/icons/seed-icon.png" alt="Seed" class="footer-logo">
+          <img src="assets/icons/seed-icon-256.png" alt="Seed" class="footer-logo">
           <span class="footer-brand-name">Seed 芥子</span>
         </div>
         <p class="footer-tagline" data-i18n="footer.tagline">让每一行代码都安全无忧。</p>

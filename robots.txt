@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seedprotector.github.io/sitemap.xml

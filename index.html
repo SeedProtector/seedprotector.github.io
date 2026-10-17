@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seed 芥子 — WebAssembly 字节码保护工具</title>
-  <meta name="description" content="Seed 芥子是一款 WebAssembly 字节码保护工具，帮助开发者将编译后的程序进行深度加固，防止逆向工程、代码窃取和未授权使用。">
-  <meta name="keywords" content="WebAssembly, wasm, bytecode protection, code obfuscation, reverse engineering, code security, Seed, 芥子">
-  <meta property="og:title" content="Seed 芥子 — WebAssembly 字节码保护工具">
-  <meta property="og:description" content="深度加固你的 WebAssembly 程序，防止逆向工程与代码窃取。">
-  <meta property="og:image" content="assets/icons/seed-icon.png">
+  <title>Seed 芥子 — WebAssembly 字节码加固与混淆工具</title>
+  <meta name="description" content="Seed 芥子为 Rust、C/C++、Go 等 WebAssembly 项目提供字节码加固、代码混淆与授权控制，帮助开发者降低逆向分析、代码窃取和未授权使用风险。">
+  <link rel="canonical" href="https://seedprotector.github.io/">
+  <meta property="og:title" content="Seed 芥子 — WebAssembly 字节码加固与混淆工具">
+  <meta property="og:description" content="Seed 芥子为 WebAssembly 程序提供字节码加固、代码混淆与授权控制，帮助降低逆向分析和未授权使用风险。">
+  <meta property="og:url" content="https://seedprotector.github.io/">
+  <meta property="og:image" content="https://seedprotector.github.io/assets/icons/seed-icon-256.png">
   <meta property="og:type" content="website">
-  <link rel="icon" type="image/png" href="assets/icons/seed-icon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Seed 芥子 — WebAssembly 字节码加固与混淆工具">
+  <meta name="twitter:description" content="WebAssembly 字节码加固、代码混淆与授权控制。">
+  <link rel="icon" type="image/png" href="assets/icons/seed-icon-256.png">
   <link rel="stylesheet" href="css/style.css">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +27,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="nav-brand">
-        <img src="assets/icons/seed-icon.png" alt="Seed Logo" class="nav-logo">
+        <img src="assets/icons/seed-icon-256.png" alt="Seed Logo" class="nav-logo">
         <span class="nav-brand-text">Seed <span class="brand-cn">芥子</span></span>
       </a>
       <div class="nav-links" id="navLinks">
@@ -33,7 +37,7 @@
         <a href="faq.html" data-i18n="nav.faq">常见问题</a>
       </div>
       <div class="nav-actions">
-        <button class="lang-toggle" id="langToggle" title="Switch Language">
+        <button class="lang-toggle" id="langToggle" title="Switch Language" aria-label="Switch language / 切换语言">
           <span class="lang-icon">🌐</span>
           <span class="lang-label" id="langLabel">EN</span>
         </button>
@@ -45,6 +49,7 @@
     </div>
   </nav>
 
+  <main id="main-content">
   <!-- ========== Hero Section ========== -->
   <section class="hero" id="hero">
     <div class="hero-bg">
@@ -215,13 +220,14 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- ========== Footer ========== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/icons/seed-icon.png" alt="Seed" class="footer-logo">
+          <img src="assets/icons/seed-icon-256.png" alt="Seed" class="footer-logo">
           <span class="footer-brand-name">Seed 芥子</span>
         </div>
         <p class="footer-tagline" data-i18n="footer.tagline">让每一行代码都安全无忧。</p>
