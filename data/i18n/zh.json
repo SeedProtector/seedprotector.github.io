@@ -9,6 +9,7 @@
   },
   "hero": {
     "badge": "WebAssembly 字节码保护",
+    "headline": "WebAssembly 字节码保护与代码加固",
     "slogan": "芥子纳须弥，代码藏乾坤。",
     "subtitle": "WebAssembly 字节码保护工具，帮助开发者将编译后的程序进行深度加固，防止逆向工程、代码窃取和未授权使用。",
     "cta": "立即开始",

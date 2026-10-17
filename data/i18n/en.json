@@ -9,6 +9,7 @@
   },
   "hero": {
     "badge": "WebAssembly Bytecode Protection",
+    "headline": "WebAssembly Bytecode Protection and Code Hardening",
     "slogan": "Hide your logic. Ship with confidence.",
     "subtitle": "A WebAssembly bytecode protection tool that deeply hardens compiled programs against reverse engineering, code theft, and unauthorized use.",
     "cta": "Get Started",
